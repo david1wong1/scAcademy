@@ -1,0 +1,13 @@
+<template>
+<lightning-card  title="New Email Message">
+<div class="slds-p-around_small" style="height:400px">
+<lightning-input type="text" label="To Address:" name='toAddress' onchange={handleInputChange}></lightning-input>
+<lightning-input type="text" label="Subject:" name='subject' onchange={handleInputChange}></lightning-input>
+
+<lightning-input-rich-text label="Body:" name='body' value={myVal} onchange={handleInputChange} label-visible="true"> </lightning-input-rich-text>
+
+<lightning-button variant="brand" label="Send" title="Send" icon-position="left" onclick={handleSendButtonClick} class="slds-float_right slds-p-top_small"></lightning-button>
+</div>
+</lightning-card>
+
+</template>
