@@ -1,4 +1,4 @@
-import { LightningElement,wire } from 'lwc';
+import { LightningElement } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import sendEmail from '@salesforce/apex/MyComponentController.sendEmail';
 export default class MyComponent extends LightningElement {
