@@ -6,7 +6,7 @@ export default class MyComponent extends LightningElement {
   toAddress;
   subject;
   body;
-
+  test;
   handleSendButtonClick() {
     sendEmail({
       toAddress : this.toAddress,
