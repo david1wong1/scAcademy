@@ -1,0 +1,39 @@
+<template>
+    <lightning-card>
+        <div class="slds-text-align_center" style="font-size:large">
+            <b>Most Popular Anime</b>
+        </div>
+        <div class="slds-grid slds-wrap">
+        <div class="slds-size_2-of-4">
+            <p>testing testing<br>testing</p>
+        </div>
+        <div class="slds-size_2-of-4">
+            <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">
+            <lightning-carousel disable-auto-scroll>
+                <lightning-carousel-image
+                    src = "https://www.lightningdesignsystem.com/assets/images/carousel/carousel-01.jpg"
+                    header = "First Card"
+                    description = "First card description."
+                    alternative-text = "First card accessible description."
+                    href = "https://www.salesforce.com">
+                </lightning-carousel-image>
+                <lightning-carousel-image
+                    src = "https://www.lightningdesignsystem.com/assets/images/carousel/carousel-02.jpg"
+                    header = "Second Card"
+                    description = "Second card description."
+                    alternative-text = "Second card accessible description."
+                    href = "https://www.salesforce.com">
+                </lightning-carousel-image>
+                <lightning-carousel-image
+                    src = "https://www.lightningdesignsystem.com/assets/images/carousel/carousel-03.jpg"
+                    header = "Third Card"
+                    description = "Third card description."
+                    alternative-text = "Third card accessible description."
+                    href = "https://www.salesforce.com">
+                </lightning-carousel-image>
+            </lightning-carousel>
+            </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>
