@@ -1,8 +1,12 @@
 public with sharing class MyComponentController {
 @AuraEnabled
-public static List<Anime__c> popularList(Integer numOfAnimes) {
+public static List<Anime__c> popularList(Integer toAddress, String subject, String body) {
 try {
-    return [SELECT Name, Rating__c FROM Anime__c ];
+    Messaging.SingleEmailMessage email = new Messaging.SingleEmailMessage();
+    email.SetToAddresses(new List<String>{toAddress});
+    email.setSubject(subject);
+    email.setHtmlBody(body);
+    Messaging.sendEmail(new Messaging.SingleEmailMessage[] {email});
 } catch (Exception e) {
     throw new AuraHandledException(e.getMessage());
 }
