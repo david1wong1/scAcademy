@@ -1,12 +1,14 @@
 public with sharing class PopularListController {
     @AuraEnabled
-    public static void sendEmail(String toAddress, String subject, String body) {
+    public static Map<Integer, Anime__c> popularList(Integer numOfAnimes) {
         try {
-            Messaging.SingleEmailMessage email = new Messaging.SingleEmailMessage();
-            email.SetToAddresses(new List<String>{toAddress});
-            email.setSubject(subject);
-            email.setHtmlBody(body);
-            Messaging.sendEmail(new Messaging.SingleEmailMessage[] {email});
+            List<Anime__c> topAnimes = new List<Anime__c>([SELECT Name, Rating__c FROM Anime__c ORDER BY Rating__c DESC LIMIT :numOfAnimes]);
+            Map<Integer, Anime__c> topAnimeMap = new Map<Integer,Anime__c>();
+            for (Integer i = 0; i < numOfAnimes; i++) {
+                topAnimeMap.put(i+1, topAnimes[i]);
+            }
+        return topAnimeMap;
+
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
         }
