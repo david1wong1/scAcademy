@@ -18,6 +18,9 @@ connectedCallback() {
     popularList({numOfAnimes:10})
     .then(result => {
         this.popularAnimeMap = result;
+        for (let key in this.popularAnimeMap) {
+            this.popularAnimeMap[key].Preview__c = this.popularAnimeMap[key].Preview__c.split('"',2)[1];
+        }
         this.anime1 = this.popularAnimeMap[1];
         this.anime2 = this.popularAnimeMap[2];
         this.anime3 = this.popularAnimeMap[3];
@@ -28,11 +31,11 @@ connectedCallback() {
         this.anime8 = this.popularAnimeMap[8];
         this.anime9 = this.popularAnimeMap[9];
         this.anime10 = this.popularAnimeMap[10];
-        console.log(this.popularAnimeMap);
-        console.log(this.popularAnimeMap[1]);
+        //console.log(this.popularAnimeMap);
+        console.log(this.anime1.Preview__c);
         console.log('working');
-        console.log(typeof this.popularAnimeMap);
-        console.log(typeof this.anime1);
+        //console.log(typeof this.popularAnimeMap);
+        //console.log(typeof this.anime1);
     }).catch(error => {
         console.log('error');
     });
