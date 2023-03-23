@@ -5,7 +5,9 @@
         </div>
         <div class="slds-grid slds-wrap">
         <div class="slds-size_2-of-4">
-            <br>{anime1}<br>{anime2}
+            <template if:true={anime1}>
+            <br>{anime1.Name} <br>{anime2.Name}
+        </template>
         </div>
         <div class="slds-size_2-of-4">
             <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">
