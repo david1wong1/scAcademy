@@ -34,7 +34,7 @@ popularList({numOfAnimes:10})
     this.anime9 = this.popularAnimeMap[9];
     this.anime10 = this.popularAnimeMap[10];
     //console.log(this.popularAnimeMap);
-    console.log(this.anime1.Preview__c);
+    //console.log(this.anime1.Preview__c);
     console.log('working');
     //console.log(typeof this.popularAnimeMap);
     //console.log(typeof this.anime1);
@@ -42,10 +42,12 @@ popularList({numOfAnimes:10})
     console.log('error');
 });
 }
-newTab(){
-    window.open(
-    'https://www.google.com/',
-    '_blank' // <- This is what makes it open in a new window.
-);
-}
+
+OnClick(event){
+    let url = event.target.id;
+    //console.log(urlval);
+    let lastHyphenIndex = url.lastIndexOf("-");
+    let newUrl = url.substring(0, lastHyphenIndex);
+    window.open(newUrl, '_blank');
+    }
 }
