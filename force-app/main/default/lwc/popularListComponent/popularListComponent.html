@@ -1,42 +1,45 @@
 <template>
-    <lightning-card>
-        <div class="slds-text-align_center" style="font-size:large">
-            <b>Most Popular Anime</b>
-        </div>
-        <div class="slds-grid slds-wrap">
-        <div class="slds-size_2-of-4">
-            <template if:true={anime1}>
+<lightning-card>
+    <div class="slds-text-align_center" style="font-size:large">
+        <b>Most Popular Anime</b>
+    </div>
+    <lightning-layout horizontal-align="center">
+        <lightning-layout-item flexibility="auto" padding="around-large" if:true={anime1}  size="7">
+
             <br>{anime1.Name}<br>{anime2.Name}<br>{anime3.Name}<br>{anime4.Name}<br>{anime5.Name}
             <br>{anime6.Name}<br>{anime7.Name}<br>{anime8.Name}<br>{anime9.Name}<br>{anime10.Name}
-        </template>
-        </div>
-        <div class="slds-size_2-of-4">
-            <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">
-            <template if:true={anime1}>
-            <lightning-carousel disable-auto-scroll>
-                <lightning-carousel-image
-                    src = {anime1.Preview__c}
-                    header = {anime1.Name}
-                    alternative-text = "First card accessible description."
-                    href = "https://www.salesforce.com">
-                </lightning-carousel-image>
-                <lightning-carousel-image
-                    src = {anime1.Preview__c}
-                    header = "Second Card"
-                    description = "Second card description."
-                    alternative-text = "Second card accessible description."
-                    href = "https://www.salesforce.com">
-                </lightning-carousel-image>
-                <lightning-carousel-image
-                    src = {anime1.Preview__c}
-                    description = "Third card description."
-                    alternative-text = "Third card accessible description."
-                    href = "https://www.salesforce.com">
-                </lightning-carousel-image>
-            </lightning-carousel>
-        </template>
-            </div>
-            </div>
-        </div>
-    </lightning-card>
+        </lightning-layout-item>
+        <lightning-layout-item flexibility="auto" padding="around-large" if:true={anime1} size="3">
+        
+        <lightning-carousel scroll-duration = 2 style="height:100px">
+            <lightning-carousel-image 
+                src = {anime1.Preview__c}
+                header = {anime1.Name}
+                href = {anime1.pageURL}>
+            </lightning-carousel-image>
+            <lightning-carousel-image
+                src = {anime2.Preview__c}
+                header = {anime2.Name}
+                href = {anime2.pageURL}>
+            </lightning-carousel-image>
+            <lightning-carousel-image
+                src = {anime3.Preview__c}
+                header = {anime3.Name}
+                href = {anime3.pageURL}>
+            </lightning-carousel-image>
+            <lightning-carousel-image
+                src = {anime4.Preview__c}
+                header = {anime4.Name}
+                href = {anime4.pageURL}>
+            </lightning-carousel-image>
+            <lightning-carousel-image
+                src = {anime5.Preview__c}
+                header = {anime5.Name}
+                href = {anime5.pageURL}>
+            </lightning-carousel-image>
+        </lightning-carousel>
+    </lightning-layout-item>
+
+    </lightning-layout>
+</lightning-card>
 </template>
