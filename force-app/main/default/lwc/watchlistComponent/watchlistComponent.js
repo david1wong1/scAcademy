@@ -1,5 +1,4 @@
-import { LightningElement, api } from 'lwc';
+import { LightningElement} from 'lwc';
 
 export default class WatchlistComponent extends LightningElement {
-@api watchList;
 }

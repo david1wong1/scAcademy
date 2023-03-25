@@ -1,8 +1,7 @@
-import { LightningElement, api, wire } from 'lwc';
+import { LightningElement } from 'lwc';
 import popularList from '@salesforce/apex/PopularListController.popularList';
 
 export default class PopularListComponent extends LightningElement {
-@api popularList
 popularAnimeMap;
 anime1;
 anime2;
@@ -20,7 +19,6 @@ popularList({numOfAnimes:10})
     this.popularAnimeMap = result;
     for (let key in this.popularAnimeMap) {
         this.popularAnimeMap[key].Preview__c = this.popularAnimeMap[key].Preview__c.split('"',2)[1];
-        
         this.popularAnimeMap[key].pageURL = "https://salescraft-a-dev-ed.develop.lightning.force.com/lightning/r/Anime__c/" + this.popularAnimeMap[key].Id + "/view";
     }
     this.anime1 = this.popularAnimeMap[1];
