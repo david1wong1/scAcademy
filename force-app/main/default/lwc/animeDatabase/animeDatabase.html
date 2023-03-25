@@ -7,20 +7,6 @@
             to you according to your watched animes.
         </p>
     </div>
+    <c-anime-search-component></c-anime-search-component>
 </lightning-card>
-    <lightning-card title="Anime Search">
-        <div class="slds-p-around_small" style="height:225px">
-        <lightning-input name="input1" label="Anime Name"></lightning-input>
-        <lightning-input name="input2" label="Main Character"></lightning-input>
-        <lightning-combobox
-            name="genre"
-            label="Genre"
-            value={value}
-            placeholder="Genre"
-            options={options}
-            onchange={handleChange} >
-        </lightning-combobox>
-        <lightning-button variant="brand" label="Search" title="Search" icon-position="left" onclick={handleSendButtonClick} class="slds-float_right slds-p-top_small"></lightning-button>
-    </div>
-    </lightning-card>
 </template>

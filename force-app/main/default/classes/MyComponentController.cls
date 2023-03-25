@@ -1,6 +1,6 @@
 public with sharing class MyComponentController {
 @AuraEnabled
-public static List<Anime__c> popularList(Integer toAddress, String subject, String body) {
+public static void sendEmail(String toAddress, String subject, String body) {
 try {
     Messaging.SingleEmailMessage email = new Messaging.SingleEmailMessage();
     email.SetToAddresses(new List<String>{toAddress});
