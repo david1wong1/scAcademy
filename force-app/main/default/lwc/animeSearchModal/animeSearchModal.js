@@ -4,20 +4,12 @@ import updateCheckbox from '@salesforce/apex/UpdateCheckboxController.updateChec
 
 export default class AnimeSearchModal extends LightningModal {
     @api content;
-    value = [];
-
-    get options() {
-        return [
-            { label: 'Favorite', value: 'favorite' },
-            { label: 'Watchlist', value: 'watchList' },
-            { label: 'Watched', value: 'watched' },
-        ];
-    }
 
 
     handleChange(event) {
         this.value = event.detail.value;
         console.log(value);
+        console.log(event.detail);
     }
     
     handleCloseModal() {

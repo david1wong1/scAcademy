@@ -57,7 +57,7 @@ handleSearchButtonClick() {
     //console.log(this.animeName);
     //console.log(this.character);
     //console.log(this.genre);
-    console.log(this.searchedAnimes);
+    //console.log(this.searchedAnimes);
     this.handleShowModal();
     }).catch(error => {
     console.log('error');
@@ -66,7 +66,7 @@ handleSearchButtonClick() {
 
 async handleShowModal() {
     //console.log(this.searchedAnimes);
-const result = await AnimeSearchModal.open({
+    const result = await AnimeSearchModal.open({
     size: 'large',
     content: this.searchedAnimes,
 });
