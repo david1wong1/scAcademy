@@ -1,8 +1,8 @@
 <template>
     <lightning-card title="Anime Search">
         <div class="slds-p-around_small" style="height:225px">
-        <lightning-input name="animeName" label="Anime Name"></lightning-input>
-        <lightning-input name="character" label="Main Character"></lightning-input>
+        <lightning-input type=text label="Anime Name" onchange={handleAnimeNameInputChange}></lightning-input>
+        <lightning-input type=text label="Main Character" placeholder="Put Last Name First" onchange={handleCharacterInputChange}></lightning-input>
         <lightning-combobox
             name="genre"
             label="Genre"

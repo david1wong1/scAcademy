@@ -14,7 +14,7 @@ connectedCallback() {
             this.favoriteList[i].Preview__c = this.favoriteList[i].Preview__c.split('"',2)[1];
             this.favoriteList[i].pageURL = "https://salescraft-a-dev-ed.develop.lightning.force.com/lightning/r/Anime__c/" + this.favoriteList[i].Id + "/view";
         }
-        console.log(this.favoriteList);
+        //console.log(this.favoriteList);
 }).catch(error => {
 console.log('favorites error');
 });
