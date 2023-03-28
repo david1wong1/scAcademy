@@ -33,7 +33,7 @@ popularList({numOfAnimes:10})
     this.anime10 = this.popularAnimeMap[10];
     //console.log(this.popularAnimeMap);
     //console.log(this.anime1.Preview__c);
-    console.log('working');
+    //console.log('working');
     //console.log(typeof this.popularAnimeMap);
     //console.log(typeof this.anime1);
 }).catch(error => {

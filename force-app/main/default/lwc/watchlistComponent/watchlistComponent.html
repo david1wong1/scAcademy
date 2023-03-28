@@ -1,8 +1,32 @@
 <template>
     <lightning-card>
-        <div style="display: flex;">
-            <div class="slds-p-around_small" style="flex: 1;"><b>Watchlist</b> <br> My Watchlist goes here.</div>
-            <div class="slds-p-around_small" style="flex: 1;"><b>Watched Anime</b> <br> My already Watched anime goes here.</div>
+<div class="c-container">
+    <lightning-layout>
+        <lightning-layout-item flexibility="auto" padding="around-large" size="4">
+            <div class="slds-text-align_center">
+                <h1><b>Favorites</b></h1> <br>
             </div>
-    </lightning-card>  
+            <template for:each={favoriteList} for:item="anime" if:true={favoriteList} for:index="index">
+                <p key = {anime.id}> <a href = {anime.pageURL} target="_blank"> {anime.Name} </a> </p>
+              </template>
+        </lightning-layout-item>
+        <lightning-layout-item flexibility="auto" padding="around-large" size="4">
+            <div class="slds-text-align_center">
+                <h1><b>Watchlist</b></h1> <br>
+            </div>
+            <template for:each={watchList} for:item="anime" if:true={watchList} for:index="index">
+                <p key = {anime.id}> <a href = {anime.pageURL} target="_blank"> {anime.Name} </a> </p>
+              </template>
+        </lightning-layout-item>
+        <lightning-layout-item flexibility="auto" padding="around-large" size="4">
+            <div class="slds-text-align_center">
+                <h1><b>Watched Animes</b></h1> <br>
+            </div>
+            <template for:each={watched} for:item="anime" if:true={watched} for:index="index">
+                <p key = {anime.id}> <a href = {anime.pageURL} target="_blank"> {anime.Name} </a> </p>
+              </template>
+        </lightning-layout-item>
+    </lightning-layout>
+</div>
+</lightning-card>
 </template>
