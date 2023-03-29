@@ -1,6 +1,9 @@
 p {
-    font-size: 1vw;
+    font-size: 1.5rem;
   }
 h1 {
-font-size: 1.75vw;
+font-size: 2.5rem;
+}
+.THIS lightning-carousel > lightning-carousel-image >  .slds-carousel__content-title {
+  font-size:1.5rem;
 }

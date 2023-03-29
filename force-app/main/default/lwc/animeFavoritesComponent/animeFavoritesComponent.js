@@ -1,24 +1,33 @@
 import { LightningElement, api } from 'lwc';
 import updateCheckbox from '@salesforce/apex/UpdateCheckboxController.updateCheckbox';
+import getCheckboxValue from '@salesforce/apex/GetCheckboxValue.getCheckboxValue';
 
 export default class AnimeFavoritesComponent extends LightningElement {
     @api animeName;
-    @api currentCheckboxValue
     whichList = 'Favorites';
     changeCheckboxValue;
-    value;
+    currentCheckboxValue;
+    value=[];
     options = [
         { label: 'Favorite', value: 'Favorites'},
     ];
 
     connectedCallback() {
-        console.log(this.currentCheckboxValue);
-        if (this.currentCheckboxValue) {
-            this.value = ['Favorite'];
-        } else {
-            this.value = [];
-        }
+        getCheckboxValue({
+            whichList: this.whichList,
+            animeName: this.animeName
+        }).then(result => {
+            this.currentCheckboxValue = result.Favorite__c;
+            if (this.currentCheckboxValue) {
+                this.value = ['Favorites'];
+            } else {
+                this.value = [];
+            }
+            }).catch(error => {
+                console.log('error');
+            });
     }
+    
     handleFavoritesChange(event) {
         if (event.detail.value.length > 0) {
             this.changeCheckboxValue = true;
