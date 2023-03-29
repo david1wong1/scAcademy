@@ -3,6 +3,7 @@ import { LightningElement, api } from 'lwc';
 export default class AnimeWatchedComponent extends LightningElement {
     @api content;
     value = [];
+    @api anime;
 
     get options() {
         return [

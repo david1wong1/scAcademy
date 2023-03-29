@@ -1,13 +1,9 @@
 <template>
-    <template for:each={content} for:item="anime" for:index="index" lwc:if={content}>
-        <p key = {anime.id} class="slds-text-align_left"> <a href = {anime.pageURL} target="_blank"> {anime.Name} </a>  
-        <lightning-checkbox-group
-            options={options}
-            label = {anime.Name}
-            value={value}
-            onchange={handleWatchlistChange}
-            variant = label-hidden>
-            </lightning-checkbox-group>
-        </p>
-        </template>
+    <lightning-checkbox-group
+        name = 'Watchlist'
+        options={options}
+        value={value}
+        onchange={handleWatchlistChange}
+        variant = label-hidden>
+        </lightning-checkbox-group>
 </template>
