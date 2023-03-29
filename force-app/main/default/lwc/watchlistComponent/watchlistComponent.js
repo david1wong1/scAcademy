@@ -1,12 +1,14 @@
-import { LightningElement} from 'lwc';
+import { LightningElement, track} from 'lwc';
 import displayList from '@salesforce/apex/DisplayListComponentController.displayList';
+import { refreshApex } from '@salesforce/apex';
 
 export default class WatchlistComponent extends LightningElement {
-favoriteList;
-watchList;
-watched;
+@track favoriteList;
+@track watchList;
+@track watched;
 
 connectedCallback() {
+    this.addEventListener('refresh', this.handleRefreshEvent);
     displayList({whichList:'Favorites'})
     .then(result => {
         this.favoriteList = result;
@@ -30,5 +32,13 @@ displayList({whichList:'Watched'})
 }).catch(error => {
 console.log('watched error');
 });
+}
+
+handleRefreshEvent() {
+    console.log('event is working');
+    refreshApex(this.favoriteList);
+    refreshApex(this.watchList);
+    refreshApex(this.watched);
+    window.reload();
 }
 }

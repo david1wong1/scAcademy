@@ -54,10 +54,6 @@ handleSearchButtonClick() {
         this.searchedAnimes[i].Preview__c = this.searchedAnimes[i].Preview__c.split('"',2)[1];
         this.searchedAnimes[i].pageURL = "https://salescraft-a-dev-ed.develop.lightning.force.com/lightning/r/Anime__c/" + this.searchedAnimes[i].Id + "/view";
     }
-    //console.log(this.animeName);
-    //console.log(this.character);
-    //console.log(this.genre);
-    //console.log(this.searchedAnimes);
     this.handleShowModal();
     }).catch(error => {
     console.log('error');
@@ -67,7 +63,7 @@ handleSearchButtonClick() {
 async handleShowModal() {
     //console.log(this.searchedAnimes);
     const result = await AnimeSearchModal.open({
-    size: 'large',
+    size: 'medium',
     content: this.searchedAnimes,
 });
 
