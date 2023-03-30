@@ -1,7 +1,6 @@
-import { LightningElement, api, wire } from 'lwc';
+import { api, wire } from 'lwc';
 import LightningModal from 'lightning/modal';
-import { refreshApex } from '@salesforce/apex';
-import { publish,subscribe,unsubscribe, MessageContext,releaseMessageContext } from 'lightning/messageService';
+import { publish, MessageContext } from 'lightning/messageService';
 import refreshChannel from '@salesforce/messageChannel/refreshChannel__c';
 
 export default class AnimeSearchModal extends LightningModal {
@@ -19,6 +18,4 @@ export default class AnimeSearchModal extends LightningModal {
         };
         publish(this.messageContext, this.channel, message);
     }
-    
-
 }

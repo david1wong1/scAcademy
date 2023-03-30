@@ -19,7 +19,6 @@ export default class PrintingListsComponent extends LightningElement {
     wiredFavorite(result) {
         this.wiredFavoriteListResult = result;
         if (result.data) {
-            console.log(result.data);
             this.favoriteList = JSON.parse(JSON.stringify(result.data));
             for (let i = 0; i < this.favoriteList.length; i++) {
                 this.favoriteList[i].pageURL = "https://salescraft-a-dev-ed.develop.lightning.force.com/lightning/r/Anime__c/" + this.favoriteList[i].Id + "/view";
@@ -37,7 +36,6 @@ export default class PrintingListsComponent extends LightningElement {
             for (let i = 0; i < this.watchList.length; i++) {
                 this.watchList[i].pageURL = "https://salescraft-a-dev-ed.develop.lightning.force.com/lightning/r/Anime__c/" + this.watchList[i].Id + "/view";
             }
-            console.log('after watchlist');
         } else if (result.error) {
             console.log('watchlist error');
         }
@@ -51,7 +49,6 @@ export default class PrintingListsComponent extends LightningElement {
             for (let i = 0; i < this.watchedList.length; i++) {
                 this.watchedList[i].pageURL = "https://salescraft-a-dev-ed.develop.lightning.force.com/lightning/r/Anime__c/" + this.watchedList[i].Id + "/view";
             }
-            console.log('afterwatched');
         } else if (result.error) {
             console.log('watchedList error');
         }
@@ -73,5 +70,4 @@ export default class PrintingListsComponent extends LightningElement {
         refreshApex(this.wiredWatchedResult);
         console.log('refreshApex was ran');
     }
-
 }

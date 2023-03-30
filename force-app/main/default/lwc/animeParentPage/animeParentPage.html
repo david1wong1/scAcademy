@@ -1,12 +1,19 @@
 <template>
-    <c-popular-list-component></c-popular-list-component>
+    <lightning-layout horizontal-align="center">
+        <lightning-layout-item padding="around-large">
+            <c-popular-list-component></c-popular-list-component>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small">
+            <c-random-anime-component></c-random-anime-component>
+        </lightning-layout-item>
+    </lightning-layout>
     <c-anime-search-component></c-anime-search-component>
     <c-printing-lists-component></c-printing-lists-component>
-<lightning-card  title="Recommended Animes">
-    <div class="slds-p-around_small">
-        <p> Will display Animes that are recommended
+    <lightning-card  title="Recommended Animes">
+        <div class="slds-p-around_small">
+            <p> Will display Animes that are recommended
             to you according to your watched animes.
-        </p>
-    </div>
-</lightning-card>
+            </p>
+        </div>
+    </lightning-card>
 </template>

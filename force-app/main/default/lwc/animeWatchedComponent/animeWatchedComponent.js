@@ -23,9 +23,9 @@ export default class AnimeWatchedComponent extends LightningElement {
             } else {
                 this.value = [];
             }
-            }).catch(error => {
-                console.log('error');
-            });
+        }).catch(error => {
+            console.log('error');
+        });
     }
     
     handleWatchedChange(event) {
@@ -36,14 +36,14 @@ export default class AnimeWatchedComponent extends LightningElement {
                 whichList: this.whichList,
                 animeName: this.animeName,
                 checkboxValue: this.changeCheckboxValue
-            })
+            });
         } else {
             this.checkboxValue = false;
             updateCheckbox({
                 whichList: this.whichList,
                 animeName: this.animeName,
                 checkboxValue: this.checkboxValue
-            })
-        }
+            });
         }
     }
+}

@@ -37,7 +37,7 @@ export default class PopularListComponent extends LightningElement {
         });
     }
 
-    OnClick(event){
+    OnClick(event) {
         let url = event.target.id;
         let lastHyphenIndex = url.lastIndexOf("-");
         let newUrl = url.substring(0, lastHyphenIndex);

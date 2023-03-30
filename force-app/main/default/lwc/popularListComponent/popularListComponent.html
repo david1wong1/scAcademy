@@ -3,8 +3,8 @@
         <div class="slds-text-align_center" style="font-size:large">
             <h1><b>Most Popular Animes</b></h1>
             <lightning-layout horizontal-align="center">
-                <lightning-layout-item flexibility="auto" padding="around-large" if:true={anime1}  size="6">
-                    <div class="slds-text-align_center">
+                <lightning-layout-item flexibility="auto" padding="around-large" if:true={anime1}>
+                    <div class="slds-text-align_center popular-list">
                         <p> <a href={anime1.pageURL} target="_blank">{anime1.Name}</a><br>{anime1.Rating__c}&#9733;
                             <br><a href={anime2.pageURL} target="_blank">{anime2.Name}</a><br>{anime2.Rating__c}&#9733;
                             <br><a href={anime3.pageURL} target="_blank">{anime3.Name}</a><br>{anime3.Rating__c}&#9733;
@@ -19,6 +19,7 @@
                     </div>
                 </lightning-layout-item>
                 <lightning-layout-item flexibility="auto" padding="around-small" if:true={anime1}>
+                    <div class="carousel">
                     <lightning-carousel scroll-duration = 2 style="height:100px">
                         <lightning-carousel-image 
                             src = {anime1.Preview__c}
@@ -47,6 +48,7 @@
                             onclick={OnClick} id={anime5.pageURL}>
                         </lightning-carousel-image>
                     </lightning-carousel>
+                    </div>
                 </lightning-layout-item>
             </lightning-layout>
         </div>
