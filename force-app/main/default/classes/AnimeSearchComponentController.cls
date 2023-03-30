@@ -1,6 +1,6 @@
 public with sharing class AnimeSearchComponentController {
     @AuraEnabled
-    public static List<Anime__c> animeSearch(String animeName, String character, String genre){
+    public static List<Anime__c> animeSearch(String animeName, String character, String genre) {
         try {
             List<Anime__c> searchedAnimes = new List<Anime__c>();
             if (animeName != null && character != null && genre != null) {
@@ -39,7 +39,7 @@ public with sharing class AnimeSearchComponentController {
                                     FROM Anime__c 
                                     WHERE Genre__c INCLUDES (:genre)];
             } else {
-                
+
             }
         return searchedAnimes;
         } catch (Exception e) {

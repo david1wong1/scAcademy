@@ -1,14 +1,9 @@
-p {
-  font-size: .75rem;
-  }
-h1 {
-  font-size: 1.2rem;
+.popular-list a {
+  font-size: 22px
 }
-
+.popular-list p {
+  font-size: 15px
+}
 .carousel {
-  width: 10rem
-}
-
-.popular-list {
-  width: 20rem
+  width: 300px
 }

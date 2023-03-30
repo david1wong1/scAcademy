@@ -1,6 +1,6 @@
-public with sharing class RandomAnimesController {
+public with sharing class GetRandomAnimesController {
     @AuraEnabled
-    public static List<Anime__c> randomAnimes() {
+    public static List<Anime__c> getRandomAnimes() {
         try {
             List<Anime__c> allAnimes = [SELECT Name, Preview__c, Rating__c FROM Anime__c];
             List<Anime__c> randomAnimes = new List<Anime__c>();
