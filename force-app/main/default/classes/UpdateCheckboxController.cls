@@ -13,7 +13,6 @@ public with sharing class UpdateCheckboxController {
             anime = [SELECT Id, Watched__c FROM Anime__c WHERE Name = :animeName];
             anime.Watched__c = checkboxValue;
         }
-        System.debug(anime);
         update anime;
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());

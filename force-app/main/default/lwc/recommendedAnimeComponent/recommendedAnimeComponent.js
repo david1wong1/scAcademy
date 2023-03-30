@@ -27,7 +27,7 @@ export default class RecommendedAnimeComponent extends LightningElement {
         });
     }
 
-    OnClick(event) {
+    onClick(event) {
         let url = event.target.id;
         let lastHyphenIndex = url.lastIndexOf("-");
         let newUrl = url.substring(0, lastHyphenIndex);
