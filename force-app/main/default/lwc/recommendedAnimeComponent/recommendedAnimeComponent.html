@@ -1,0 +1,39 @@
+<template>
+    <div class="carousel">
+        <lightning-layout-item padding="around-large" if:true={anime1}>
+            <lightning-carousel scroll-duration = 2>
+                <lightning-carousel-image 
+                    src = {anime1.Preview__c}
+                    header = {anime1.Name}
+                    description = {anime1.Rating__c}
+                    onclick={OnClick} 
+                    id={anime1.pageURL}>
+                </lightning-carousel-image>
+                <lightning-carousel-image
+                    src = {anime2.Preview__c}
+                    header = {anime2.Name}
+                    onclick={OnClick} 
+                    id={anime2.pageURL}>
+                </lightning-carousel-image>
+                <lightning-carousel-image
+                    src = {anime3.Preview__c}
+                    header = {anime3.Name}
+                    onclick={OnClick} 
+                    id={anime3.pageURL}>
+                </lightning-carousel-image>
+                <lightning-carousel-image
+                    src = {anime4.Preview__c}
+                    header = {anime4.Name}
+                    onclick={OnClick} 
+                    id={anime4.pageURL}>
+                </lightning-carousel-image>
+                <lightning-carousel-image
+                    src = {anime5.Preview__c}
+                    header = {anime5.Name}
+                    onclick={OnClick} 
+                    id={anime5.pageURL}>
+                </lightning-carousel-image>
+            </lightning-carousel>
+        </lightning-layout-item>
+    </div>
+</template>

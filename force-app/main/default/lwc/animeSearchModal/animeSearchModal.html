@@ -2,17 +2,11 @@
     <lightning-modal-header label="Searched Animes"></lightning-modal-header>
     <lightning-modal-body>
         <template for:each={content} for:item="anime" for:index="index" lwc:if={content}>
-            <p key = {anime.id} class="slds-text-align_left"> <a href = {anime.pageURL} target="_blank"> {anime.Name} </a>  
-            <!--<lightning-checkbox-group
-                options={options}
-                value={anime.value}
-                onchange={handleChange}
-                variant = 'label-inline'>
-                </lightning-checkbox-group>
-            -->
-            </p>
-            </template>
-        
+            <p key = {anime.id} class="slds-text-align_center"> <a href = {anime.pageURL} target="_blank"> {anime.Name} </a>  </p>
+            <c-anime-favorites-component key = {anime.id} anime-name = {anime.Name}></c-anime-favorites-component>
+            <c-anime-watchlist-component key = {anime.id} anime-name = {anime.Name}></c-anime-watchlist-component> 
+            <c-anime-watched-component key = {anime.id} anime-name = {anime.Name}></c-anime-watched-component>
+        </template>
         <template lwc:else>
             <p class="slds-text-align_center"> There is no anime with your criteria. Please re-enter.</p>
         </template>

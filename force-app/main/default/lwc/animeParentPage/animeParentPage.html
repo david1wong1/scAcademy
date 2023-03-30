@@ -1,0 +1,22 @@
+<template>
+    <div style="min-width:1600px">
+        <lightning-card>
+            <lightning-layout horizontal-align = "center">
+                <lightning-layout-item padding="around-large">
+                    <h1 class="slds-text-align_center"><b>Most Popular Animes</b></h1>
+                    <c-popular-list-component></c-popular-list-component>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-large">
+                    <h1 class="slds-text-align_center"><b>Recommended Animes</b><br></h1>
+                    <c-recommended-anime-component></c-recommended-anime-component>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-large">
+                    <h1 class="slds-text-align_center"><b>Random Animes</b><br></h1>
+                    <c-random-anime-component></c-random-anime-component>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-card>
+    </div>
+        <c-anime-search-component></c-anime-search-component>
+        <c-printing-lists-component></c-printing-lists-component>
+</template>

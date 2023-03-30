@@ -1,27 +1,21 @@
-import { LightningElement, api } from 'lwc';
+import { api, wire } from 'lwc';
 import LightningModal from 'lightning/modal';
-import updateCheckbox from '@salesforce/apex/UpdateCheckboxController.updateCheckbox';
+import { publish, MessageContext } from 'lightning/messageService';
+import refreshChannel from '@salesforce/messageChannel/refreshChannel__c';
 
 export default class AnimeSearchModal extends LightningModal {
     @api content;
-    value = [];
+    channel = refreshChannel;
 
-    get options() {
-        return [
-            { label: 'Favorite', value: 'favorite' },
-            { label: 'Watchlist', value: 'watchList' },
-            { label: 'Watched', value: 'watched' },
-        ];
-    }
+    @wire(MessageContext)
+    messageContext;
 
-
-    handleChange(event) {
-        this.value = event.detail.value;
-        console.log(value);
-    }
-    
     handleCloseModal() {
         this.close('Done');
+        console.log('Modal closed');
+        const message = {
+            data: 'refresh'
+        };
+        publish(this.messageContext, this.channel, message);
     }
-
 }

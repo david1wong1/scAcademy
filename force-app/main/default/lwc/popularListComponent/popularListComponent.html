@@ -1,55 +1,51 @@
 <template>
-<lightning-card>
-<div class="slds-text-align_center" style="font-size:large">
-    <h1><b>Most Popular Animes</b></h1>
-<lightning-layout horizontal-align="center">
-    <lightning-layout-item flexibility="auto" padding="around-large" if:true={anime1}  size="6">
-    <div class="slds-text-align_center">
-        <p><a href={anime1.pageURL} target="_blank">{anime1.Name}</a><br>{anime1.Rating__c}&#9733;
-            <br><a href={anime2.pageURL} target="_blank">{anime2.Name}</a><br>{anime2.Rating__c}&#9733;
-            <br><a href={anime3.pageURL} target="_blank">{anime3.Name}</a><br>{anime3.Rating__c}&#9733;
-            <br><a href={anime4.pageURL} target="_blank">{anime4.Name}</a><br>{anime4.Rating__c}&#9733;
-            <br><a href={anime5.pageURL} target="_blank">{anime5.Name}</a><br>{anime5.Rating__c}&#9733;
-            <br><a href={anime6.pageURL} target="_blank">{anime6.Name}</a><br>{anime6.Rating__c}&#9733;
-            <br><a href={anime7.pageURL} target="_blank">{anime7.Name}</a><br>{anime7.Rating__c}&#9733;
-            <br><a href={anime8.pageURL} target="_blank">{anime8.Name}</a><br>{anime8.Rating__c}&#9733;
-            <br><a href={anime9.pageURL} target="_blank">{anime9.Name}</a><br>{anime9.Rating__c}&#9733;
-            <br><a href={anime10.pageURL} target="_blank">{anime10.Name}</a><br>{anime10.Rating__c}&#9733;
-        </p>
-    </div>
-    </lightning-layout-item>
-    <lightning-layout-item flexibility="auto" padding="around-small" if:true={anime1} size="2">
-    <lightning-carousel scroll-duration = 2 style="height:100px">
-        <lightning-carousel-image 
-            src = {anime1.Preview__c}
-            header = {anime1.Name}
-            description = {anime1.Rating__c}
-            onclick={OnClick} id={anime1.pageURL}>
-        </lightning-carousel-image>
-        <lightning-carousel-image
-            src = {anime2.Preview__c}
-            header = {anime2.Name}
-            onclick={OnClick} id={anime2.pageURL}>
-        </lightning-carousel-image>
-        <lightning-carousel-image
-            src = {anime3.Preview__c}
-            header = {anime3.Name}
-            onclick={OnClick} id={anime3.pageURL}>
-        </lightning-carousel-image>
-        <lightning-carousel-image
-            src = {anime4.Preview__c}
-            header = {anime4.Name}
-            onclick={OnClick} id={anime4.pageURL}>
-        </lightning-carousel-image>
-        <lightning-carousel-image
-            src = {anime5.Preview__c}
-            header = {anime5.Name}
-            onclick={OnClick} id={anime5.pageURL}>
-        </lightning-carousel-image>
-    </lightning-carousel>
-</lightning-layout-item>
-
-</lightning-layout>
-</div>
-</lightning-card>
+    <lightning-layout>
+        <lightning-layout-item padding="around-large" if:true={anime1}>
+            <div class="slds-text-align_center popular-list">
+                <p> <a href={anime1.pageURL} target="_blank">{anime1.Name}</a><br>{anime1.Rating__c}&#9733;
+                    <br><a href={anime2.pageURL} target="_blank">{anime2.Name}</a><br>{anime2.Rating__c}&#9733;
+                    <br><a href={anime3.pageURL} target="_blank">{anime3.Name}</a><br>{anime3.Rating__c}&#9733;
+                    <br><a href={anime4.pageURL} target="_blank">{anime4.Name}</a><br>{anime4.Rating__c}&#9733;
+                    <br><a href={anime5.pageURL} target="_blank">{anime5.Name}</a><br>{anime5.Rating__c}&#9733;
+                    <br><a href={anime6.pageURL} target="_blank">{anime6.Name}</a><br>{anime6.Rating__c}&#9733;
+                    <br><a href={anime7.pageURL} target="_blank">{anime7.Name}</a><br>{anime7.Rating__c}&#9733;
+                    <br><a href={anime8.pageURL} target="_blank">{anime8.Name}</a><br>{anime8.Rating__c}&#9733;
+                    <br><a href={anime9.pageURL} target="_blank">{anime9.Name}</a><br>{anime9.Rating__c}&#9733;
+                    <br><a href={anime10.pageURL} target="_blank">{anime10.Name}</a><br>{anime10.Rating__c}&#9733;
+                </p>
+            </div>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-large" if:true={anime1}>
+            <div class="carousel">
+            <lightning-carousel scroll-duration = 2>
+                <lightning-carousel-image 
+                    src = {anime1.Preview__c}
+                    header = {anime1.Name}
+                    description = {anime1.Rating__c}
+                    onclick={OnClick} id={anime1.pageURL}>
+                </lightning-carousel-image>
+                <lightning-carousel-image
+                    src = {anime2.Preview__c}
+                    header = {anime2.Name}
+                    onclick={OnClick} id={anime2.pageURL}>
+                </lightning-carousel-image>
+                <lightning-carousel-image
+                    src = {anime3.Preview__c}
+                    header = {anime3.Name}
+                    onclick={OnClick} id={anime3.pageURL}>
+                </lightning-carousel-image>
+                <lightning-carousel-image
+                    src = {anime4.Preview__c}
+                    header = {anime4.Name}
+                    onclick={OnClick} id={anime4.pageURL}>
+                </lightning-carousel-image>
+                <lightning-carousel-image
+                    src = {anime5.Preview__c}
+                    header = {anime5.Name}
+                    onclick={OnClick} id={anime5.pageURL}>
+                </lightning-carousel-image>
+            </lightning-carousel>
+            </div>
+        </lightning-layout-item>
+    </lightning-layout>
 </template>

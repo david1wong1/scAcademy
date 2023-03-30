@@ -1,17 +1,30 @@
 <template>
-    <lightning-card title="Anime Search">
-        <div class="slds-p-around_small" style="height:225px">
-        <lightning-input type=text label="Anime Name" onchange={handleAnimeNameInputChange}></lightning-input>
-        <lightning-input type=text label="Main Character" placeholder="Put Last Name First" onchange={handleCharacterInputChange}></lightning-input>
-        <lightning-combobox
-            name="genre"
-            label="Genre"
-            value={value}
-            placeholder="Genre"
-            options={options}
-            onchange={handleComboboxChange} >
-        </lightning-combobox>
-        <lightning-button variant="brand" label="Search" title="Search" icon-position="left" onclick={handleSearchButtonClick} class="slds-float_right slds-p-top_small"></lightning-button>
+    <div style="min-width:1600px">
+        <lightning-card>
+            <div class="slds-p-horizontal_small" style="height:320px">
+                <div class="slds-text-align_center">
+                    <h1><b>Anime Search</b></h1>
+                </div>
+            <p>Anime Name</p>
+            <lightning-input type=text onchange={handleAnimeNameInputChange} 
+            variant="label-hidden" style="font-size:20pt"></lightning-input>
+            <p>Main Character</p>
+            <lightning-input type=text placeholder="Put Last Name First" 
+            variant="label-hidden" onchange={handleCharacterInputChange} style="font-size:20pt"></lightning-input>
+            <p>Genre</p>
+            <lightning-combobox
+                name="genre"
+                value={value}
+                placeholder="Genre"
+                options={options}
+                onchange={handleComboboxChange}
+                style="font-size:20pt"
+                variant="label-hidden">
+            </lightning-combobox>
+            <lightning-button variant="brand" label="Search" title="Search" icon-position="left" 
+            onclick={handleSearchButtonClick} class="slds-float_right slds-p-top_large">
+            </lightning-button>
+            </div>
+        </lightning-card>
     </div>
-    </lightning-card>
 </template>
