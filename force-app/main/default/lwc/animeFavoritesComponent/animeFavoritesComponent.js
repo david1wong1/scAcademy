@@ -9,7 +9,7 @@ export default class AnimeFavoritesComponent extends LightningElement {
     currentCheckboxValue;
     value=[];
     options = [
-        { label: 'Favorite', value: 'Favorites'},
+        { label: 'Favorite', value: 'Favorite'},
     ];
 
     connectedCallback() {
@@ -19,7 +19,7 @@ export default class AnimeFavoritesComponent extends LightningElement {
         }).then(result => {
             this.currentCheckboxValue = result.Favorite__c;
             if (this.currentCheckboxValue) {
-                this.value = ['Favorites'];
+                this.value = [this.whichList];
             } else {
                 this.value = [];
             }
@@ -33,16 +33,15 @@ export default class AnimeFavoritesComponent extends LightningElement {
             this.changeCheckboxValue = true;
             console.log(this.currentCheckboxValue);
             updateCheckbox({
-               whichList: this.whichList,
-                name: this.animeName,
+                whichList: this.whichList,
+                animeName: this.animeName,
                 checkboxValue: this.changeCheckboxValue
             })
         } else {
-            //console.log(JSON.parse(JSON.stringify(event.detail)));
             this.checkboxValue = false;
             updateCheckbox({
                 whichList: this.whichList,
-                name: this.animeName,
+                animeName: this.animeName,
                 checkboxValue: this.checkboxValue
             })
         }
