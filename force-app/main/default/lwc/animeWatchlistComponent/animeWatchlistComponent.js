@@ -31,7 +31,6 @@ export default class AnimeWatchlistComponent extends LightningElement {
     handleWatchlistChange(event) {
         if (event.detail.value.length > 0) {
             this.changeCheckboxValue = true;
-            console.log(this.currentCheckboxValue);
             updateCheckbox({
                 whichList: this.whichList,
                 animeName: this.animeName,
