@@ -7,7 +7,7 @@ public with sharing class PopularListController {
                                                             DESC LIMIT :numOfAnimes]);
             Map<Integer, Anime__c> topAnimeMap = new Map<Integer,Anime__c>();
             for (Integer i = 0; i < numOfAnimes; i++) {
-                topAnimeMap.put(i+1, topAnimes[i]);
+                topAnimeMap.put(i + 1, topAnimes[i]);
             }
         return topAnimeMap;
 
