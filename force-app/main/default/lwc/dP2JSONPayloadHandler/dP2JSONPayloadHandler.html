@@ -1,0 +1,13 @@
+<template>
+    <lightning-input-rich-text
+    value={jsonText}
+    onchange={handleJSONChange}>
+    </lightning-input-rich-text>
+    <lightning-formatted-rich-text
+    value={jsonText}> 
+    </lightning-formatted-rich-text>
+    <lightning-button 
+        variant="brand" label="Send" title="Send" icon-position="left" 
+        onclick={handleSendButtonClick} class="slds-float_right slds-p-top_large">
+    </lightning-button>
+</template>
