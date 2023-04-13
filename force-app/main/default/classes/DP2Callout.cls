@@ -5,7 +5,7 @@ global class DP2Callout {
         public String access_token;
     }
     @future(callout=true)
-    
+    @AuraEnabled
     public static void insertContactInfo(String jsonStr) { 
         
         String clientId = '3MVG9ux34Ig8G5erBAIOg7c3mFRtStTUXkOEzYKC0HSTNqlVdHTfk6ZjKVVgFPyFpQI7otup10rqLy3CEbKit';
